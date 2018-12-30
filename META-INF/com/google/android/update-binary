@@ -214,4 +214,65 @@ unmount_all;
 
 ui_print " ";
 ui_print " ";
+ui_print "Mounting /vendor";
+mkdir /vendor;
+mount -t ext4 -o rw /dev/block/bootdevice/by-name/vendor /vendor;
+
+ui_print " ";
+ui_print "Mounting /system";
+ui_print " ";
+mkdir /system;
+mount -t ext4 -o rw /dev/block/bootdevice/by-name/system /system;
+
+mkdir -p /tmp/LibXZR;
+cd /tmp/LibXZR;
+unzip -o "$ZIPFILE";
+
+ui_print "Installing cpu profiles...";
+ui_print " ";
+
+mv /vendor/etc/perf/perfboostsconfig.xml /vendor/etc/perf/perfboostsconfig.xml.bak
+
+cp -rf /tmp/LibXZR/patches/init.qcom.power.rc /vendor/etc/init/hw;
+
+chmod 0644 /vendor/etc/init/hw/init.qcom.power.rc
+
+if [ -e /vendor/etc/thermal-engine.conf ];then
+
+cp -rf /tmp/LibXZR/patches/thermal-engine.conf /vendor/etc;
+
+chmod 0644 /vendor/etc/thermal-engine.conf;
+
+fi;
+
+if [ -e /system/etc/thermal-engine.conf ];then
+
+cp -rf /tmp/LibXZR/patches/thermal-engine.conf /system/etc;
+
+chmod 0644 /system/etc/thermal-engine.conf;
+
+fi;
+
+cp -rf /tmp/LibXZR/patches/fstab.qcom /vendor/etc;
+
+chmod 0644 /vendor/etc/fstab.qcom;
+
+ui_print "Checking for VOLTE...";
+ui_print " ";
+
+if [ -e /vendor/bin/init.qcom.sh ]
+then
+grep -q "multi_sim_data_call" /vendor/bin/init.qcom.sh && cp -f /tmp/LibXZR/patches/init.qcom.haxvolte.sh /vendor/bin/init.qcom.sh && ui_print "VOLTE hax installed" || cp -f /tmp/LibXZR/patches/init.qcom.sh /vendor/bin && ui_print "No need for VOLTE hax"
+else
+cp -f /tmp/LibXZR/patches/init.qcom.sh /vendor/bin;
+fi
+chmod 755 /vendor/bin/init.qcom.sh;
+
+rm -rf /tmp/LibXZR
+
+umount /vendor
+umount /system
+
+ui_print " ";
+ui_print " ";
 ui_print "Done!";
