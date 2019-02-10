@@ -224,7 +224,7 @@ ui_print " ";
 ui_print " ";
 ui_print "Mounting /vendor";
 mkdir /vendor;
-mount -t ext4 -o rw /dev/block/bootdevice/by-name/vendor /vendor;
+mount -t ext4 -o rw /dev/block/bootdevice/by-name/factory /vendor;
 
 ui_print " ";
 ui_print "Mounting /system";
