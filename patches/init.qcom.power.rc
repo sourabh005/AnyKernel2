@@ -25,6 +25,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+import /vendor/etc/init/hw/init.spectrum.rc
+
 on init
     # Disable UFS powersaving
     write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 0
