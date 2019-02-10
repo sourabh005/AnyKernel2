@@ -27,8 +27,8 @@ on property:persist.spectrum.profile=0
     write /sys/module/boost_control/parameters/input_boost_freq_perf 556800
     write /sys/module/boost_control/parameters/input_boost_freq_lp 844800
 
-    write /sys/kernel/gpu/gpu_max_clock 510
-    write /sys/kernel/gpu/gpu_min_clock 180
+    write /sys/class/kgsl/kgsl-3d0/max_gpuclk 510000000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 180000000
 
 # Performance(Default)
 on property:persist.spectrum.profile=1
@@ -45,8 +45,8 @@ on property:persist.spectrum.profile=1
     write /sys/module/boost_control/parameters/input_boost_freq_perf 480000
     write /sys/module/boost_control/parameters/input_boost_freq_lp 652800
 
-    write /sys/kernel/gpu/gpu_max_clock 624
-    write /sys/kernel/gpu/gpu_min_clock 180
+    write /sys/class/kgsl/kgsl-3d0/max_gpuclk 624000000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 180000000
 
 # Battery
 on property:persist.spectrum.profile=2
@@ -63,8 +63,8 @@ on property:persist.spectrum.profile=2
     write /sys/module/boost_control/parameters/input_boost_freq_perf 0
     write /sys/module/boost_control/parameters/input_boost_freq_lp 0
 
-    write /sys/kernel/gpu/gpu_max_clock 401
-    write /sys/kernel/gpu/gpu_min_clock 180
+    write /sys/class/kgsl/kgsl-3d0/max_gpuclk 401800000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 180000000
 
 
 # Gaming
@@ -82,5 +82,5 @@ on property:persist.spectrum.profile=3
     write /sys/module/boost_control/parameters/input_boost_freq_perf 806400
     write /sys/module/boost_control/parameters/input_boost_freq_lp 844800
 
-    write /sys/kernel/gpu/gpu_max_clock 510
-    write /sys/kernel/gpu/gpu_min_clock 315
+    write /sys/class/kgsl/kgsl-3d0/max_gpuclk 510000000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 315000000
