@@ -242,35 +242,25 @@ ui_print " ";
 mv /vendor/etc/perf/perfboostsconfig.xml /vendor/etc/perf/perfboostsconfig.xml.bak
 
 cp -rf /tmp/LibXZR/patches/init.qcom.power.rc /vendor/etc/init/hw;
-
 chmod 0644 /vendor/etc/init/hw/init.qcom.power.rc
 
 cp -rf /tmp/LibXZR/patches/init.spectrum.rc /vendor/etc/init/hw;
-
 chmod 0644 /vendor/etc/init/hw/init.spectrum.rc
 
 cp -rf /tmp/LibXZR/patches/init.spectrum.sh /vendor/etc/init/hw;
-
 chmod 0755 /vendor/etc/init/hw/init.spectrum.sh
 
 if [ -e /vendor/etc/thermal-engine.conf ];then
-
 cp -rf /tmp/LibXZR/patches/thermal-engine.conf /vendor/etc;
-
 chmod 0644 /vendor/etc/thermal-engine.conf;
-
 fi;
 
 if [ -e /system/etc/thermal-engine.conf ];then
-
 cp -rf /tmp/LibXZR/patches/thermal-engine.conf /system/etc;
-
 chmod 0644 /system/etc/thermal-engine.conf;
-
 fi;
 
 cp -rf /tmp/LibXZR/patches/fstab.qcom /vendor/etc;
-
 chmod 0644 /vendor/etc/fstab.qcom;
 
 ui_print "Checking for VOLTE...";
