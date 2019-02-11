@@ -4,6 +4,15 @@
 
 # Initialization
 on property:sys.boot_completed=1
+   #Fuck powerhal
+   chown root root /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+   chown root root /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+   chown root root /dev/stune/top-app/schedtune.boost
+   chown root root /sys/bus/cpu/devices/cpu0/cpufreq/scaling_max_freq
+   chown root root /sys/bus/cpu/devices/cpu0/cpufreq/scaling_min_freq
+   chown root root /sys/bus/cpu/devices/cpu2/cpufreq/scaling_max_freq
+   chown root root /sys/bus/cpu/devices/cpu2/cpufreq/scaling_min_freq
+   
    # Set default profile on first boot
    exec u:r:init:s0 root root -- /vendor/etc/init/hw/init.spectrum.sh
    exec u:r:su:s0 root root -- /vendor/etc/init/hw/init.spectrum.sh
