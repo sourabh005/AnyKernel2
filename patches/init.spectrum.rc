@@ -28,10 +28,17 @@ on property:persist.spectrum.profile=0
     chmod 0777 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1824000
     chmod 0444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
-
+    
     chmod 0777 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1324800
     chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    
+    chmod 0777 /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 307200
+    chmod 0444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+    chmod 0777 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
+    chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
     write /sys/module/boost_control/parameters/input_boost_freq_perf 556800
     write /sys/module/boost_control/parameters/input_boost_freq_lp 844800
@@ -50,6 +57,13 @@ on property:persist.spectrum.profile=1
     chmod 0777 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1593600
     chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    
+    chmod 0777 /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 307200
+    chmod 0444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+    chmod 0777 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
+    chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
     write /sys/module/boost_control/parameters/input_boost_freq_perf 480000
     write /sys/module/boost_control/parameters/input_boost_freq_lp 652800
@@ -68,6 +82,13 @@ on property:persist.spectrum.profile=2
     chmod 0777 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1036800
     chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    
+    chmod 0777 /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 307200
+    chmod 0444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+    chmod 0777 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
+    chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
     write /sys/module/boost_control/parameters/input_boost_freq_perf 0
     write /sys/module/boost_control/parameters/input_boost_freq_lp 0
@@ -87,6 +108,13 @@ on property:persist.spectrum.profile=3
     chmod 0777 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1401600
     chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    
+    chmod 0777 /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 307200
+    chmod 0444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+    chmod 0777 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
+    chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
     write /sys/module/boost_control/parameters/input_boost_freq_perf 806400
     write /sys/module/boost_control/parameters/input_boost_freq_lp 844800
