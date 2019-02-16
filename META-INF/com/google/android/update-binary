@@ -247,8 +247,9 @@ chmod 0644 /vendor/etc/init/hw/init.qcom.power.rc
 cp -rf /tmp/LibXZR/patches/init.spectrum.rc /vendor/etc/init/hw;
 chmod 0644 /vendor/etc/init/hw/init.spectrum.rc
 
-cp -rf /tmp/LibXZR/patches/init.spectrum.sh /vendor/etc/init/hw;
-chmod 0755 /vendor/etc/init/hw/init.spectrum.sh
+rm -f /vendor/etc/init/hw/init.spectrum.sh
+cp -rf /tmp/LibXZR/patches/init.spectrum.sh /vendor/bin;
+chmod 0755 /vendor/bin/init.spectrum.sh
 
 if [ -e /vendor/etc/thermal-engine.conf ];then
 cp -rf /tmp/LibXZR/patches/thermal-engine.conf /vendor/etc;
