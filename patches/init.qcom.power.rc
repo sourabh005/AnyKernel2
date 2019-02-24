@@ -215,8 +215,6 @@ on enable-low-power
     # Set perfd properties
     setprop sys.post_boot.parsed 1
 
-    write /sys/kernel/sound_control/speaker_gain 20
-
 on property:sys.boot_completed=1
     trigger enable-low-power
 
