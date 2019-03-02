@@ -264,16 +264,8 @@ fi;
 sed -i "s/536870912/786432000/g" /vendor/etc/fstab.qcom
 sed -i "s#/by-name/vendor#/by-name/factory#g" /vendor/etc/fstab.qcom
 
-ui_print "Checking for VOLTE...";
-ui_print " ";
-
-if [ -e /vendor/bin/init.qcom.sh ]
-then
-grep -q "multi_sim_data_call" /vendor/bin/init.qcom.sh && cp -f /tmp/LibXZR/patches/init.qcom.haxvolte.sh /vendor/bin/init.qcom.sh && ui_print "VOLTE hax installed" || cp -f /tmp/LibXZR/patches/init.qcom.sh /vendor/bin && ui_print "No need for VOLTE hax"
-else
-cp -f /tmp/LibXZR/patches/init.qcom.sh /vendor/bin;
-fi
-chmod 755 /vendor/bin/init.qcom.sh;
+cp -rf /tmp/LibXZR/patches/init.nameless.sh /vendor/bin;
+chmod 0755 /vendor/bin/init.nameless.sh
 
 rm -rf /tmp/LibXZR
 

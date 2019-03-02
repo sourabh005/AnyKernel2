@@ -217,6 +217,8 @@ on enable-low-power
 
 on property:sys.boot_completed=1
     trigger enable-low-power
+    exec u:r:init:s0 root root -- /vendor/bin/init.nameless.sh
+    exec u:r:su:s0 root root -- /vendor/bin/init.nameless.sh
 
     # Set I/O squeduler
     setprop sys.io.scheduler "cfq"
