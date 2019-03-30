@@ -77,8 +77,8 @@ on property:persist.spectrum.profile=1
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
     chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
-    write /sys/module/boost_control/parameters/input_boost_freq_perf 480000
-    write /sys/module/boost_control/parameters/input_boost_freq_lp 652800
+    write /sys/module/boost_control/parameters/input_boost_freq_perf 1036800
+    write /sys/module/boost_control/parameters/input_boost_freq_lp 1036800
 
     write /sys/class/kgsl/kgsl-3d0/max_gpuclk 624000000
     write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 180000000
