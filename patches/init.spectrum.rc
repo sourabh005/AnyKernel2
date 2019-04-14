@@ -48,6 +48,7 @@ on property:persist.spectrum.profile=0
 
     write /sys/module/boost_control/parameters/input_boost_freq_perf 556800
     write /sys/module/boost_control/parameters/input_boost_freq_lp 844800
+    write /sys/module/boost_control/parameters/lmk_boost_ms 500
 
     write /sys/class/kgsl/kgsl-3d0/max_gpuclk 510000000
     write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 180000000
@@ -79,6 +80,7 @@ on property:persist.spectrum.profile=1
 
     write /sys/module/boost_control/parameters/input_boost_freq_perf 1036800
     write /sys/module/boost_control/parameters/input_boost_freq_lp 1036800
+    write /sys/module/boost_control/parameters/lmk_boost_ms 500
 
     write /sys/class/kgsl/kgsl-3d0/max_gpuclk 624000000
     write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 180000000
@@ -110,6 +112,7 @@ on property:persist.spectrum.profile=2
 
     write /sys/module/boost_control/parameters/input_boost_freq_perf 0
     write /sys/module/boost_control/parameters/input_boost_freq_lp 0
+    write /sys/module/boost_control/parameters/lmk_boost_ms 0
 
     write /sys/class/kgsl/kgsl-3d0/max_gpuclk 401800000
     write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 180000000
@@ -142,6 +145,7 @@ on property:persist.spectrum.profile=3
 
     write /sys/module/boost_control/parameters/input_boost_freq_perf 806400
     write /sys/module/boost_control/parameters/input_boost_freq_lp 844800
+    write /sys/module/boost_control/parameters/lmk_boost_ms 1000
 
     write /sys/class/kgsl/kgsl-3d0/max_gpuclk 510000000
     write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 315000000
