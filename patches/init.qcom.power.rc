@@ -216,6 +216,8 @@ on enable-low-power
     # Set perfd properties
     setprop sys.post_boot.parsed 1
 
+    write /sys/module/cpufreq_performance/parameters/booted "Y"
+
 on property:sys.boot_completed=1
     trigger enable-low-power
     exec u:r:init:s0 root root -- /vendor/bin/init.nameless.sh
