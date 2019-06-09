@@ -261,8 +261,8 @@ cp -rf /tmp/LibXZR/patches/thermal-engine.conf /system/etc;
 chmod 0644 /system/etc/thermal-engine.conf;
 fi;
 
-sed -i "s/536870912/1073741824/g" /vendor/etc/fstab.qcom
-sed -i "s/786432000/1073741824/g" /vendor/etc/fstab.qcom
+sed -i "s/zramsize=1073741824/zramsize=536870912/g" /vendor/etc/fstab.qcom
+sed -i "s/zramsize=786432000/zramsize=536870912/g" /vendor/etc/fstab.qcom
 sed -i "s#/by-name/vendor#/by-name/factory#g" /vendor/etc/fstab.qcom
 
 cp -rf /tmp/LibXZR/patches/init.nameless.sh /vendor/bin;
