@@ -28,8 +28,8 @@ on property:persist.spectrum.profile=0
 
     write /sys/module/boost_control/parameters/app_launch_boost_ms 500
 
-    write /sys/module/cpufreq/parameters/cluster_0_ucfreq 0
-    write /sys/module/cpufreq/parameters/cluster_1_ucfreq 0
+    write /sys/module/cpufreq/parameters/cluster_0_ucfreq 844800
+    write /sys/module/cpufreq/parameters/cluster_1_ucfreq 1036800
 
     chmod 0777 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1824000
