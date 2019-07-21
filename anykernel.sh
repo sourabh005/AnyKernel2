@@ -15,6 +15,7 @@ device.name3=Z2
 device.name4=z2
 device.name5=Z2131
 supported.versions=
+supported.patchlevels=
 '; } # end properties
 
 # shell variables
