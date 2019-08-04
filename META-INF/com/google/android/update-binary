@@ -297,6 +297,9 @@ sed -i "s/zramsize=1073741824/zramsize=786432000/g" /vendor/etc/fstab.qcom
 sed -i "s/zramsize=536870912/zramsize=786432000/g" /vendor/etc/fstab.qcom
 sed -i "s#/by-name/vendor#/by-name/factory#g" /vendor/etc/fstab.qcom
 
+#Gib fphal higher priority
+sed -i "s/system-background/top-app/g" "/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc"
+
 cp -rf /tmp/LibXZR/patches/init.nameless.sh /vendor/bin;
 chmod 0755 /vendor/bin/init.nameless.sh
 
