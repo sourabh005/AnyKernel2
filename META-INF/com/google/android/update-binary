@@ -308,6 +308,15 @@ sed -i "s/system-background/top-app/g" "/vendor/etc/init/android.hardware.biomet
 cp -rf /tmp/LibXZR/patches/init.nameless.sh /vendor/bin;
 chmod 0755 /vendor/bin/init.nameless.sh
 
+if [ ! -e /vendor/bin/msm_irqbalance ]
+then
+ui_print "msm_irqbalance is missing, installing it..."
+cp /tmp/LibXZR/irqbalance/msm_irqbalance /vendor/bin
+chmod 755 /vendor/bin/msm_irqbalance
+cp /tmp/LibXZR/irqbalance/msm_irqbalance.conf /vendor/etc
+cp /tmp/LibXZR/irqbalance/init.irqbalance.rc /vendor/etc/init/hw
+fi
+
 rm -rf /tmp/LibXZR
 
 umount /vendor

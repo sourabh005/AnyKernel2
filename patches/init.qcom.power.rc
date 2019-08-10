@@ -26,6 +26,7 @@
 #
 
 import /vendor/etc/init/hw/init.spectrum.rc
+import /vendor/etc/init/hw/init.irqbalance.rc
 
 on init
     # Disable UFS powersaving
