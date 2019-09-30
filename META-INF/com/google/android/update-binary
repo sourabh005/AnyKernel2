@@ -348,7 +348,7 @@ fi
 
 rm -rf /tmp/LibXZR
 
-umount /vendor
-umount /system
+umount /vendor 2>/dev/null
+umount /system 2>/dev/null
 
 ui_print " " " " "Done!";
