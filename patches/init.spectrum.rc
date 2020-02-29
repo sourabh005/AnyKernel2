@@ -23,6 +23,9 @@ on property:sys.boot_completed=1
    # Trigger selinux faker
    write /sys/fs/selinux/enforce 1
 
+   # Blkio background settings
+   write /dev/blkio/background/blkio.weight 10
+
 # Balance
 on property:persist.spectrum.profile=0
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedhorizon"
