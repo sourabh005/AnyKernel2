@@ -23,10 +23,13 @@ on property:sys.boot_completed=1
    # Trigger selinux faker
    write /sys/fs/selinux/enforce 1
 
+   # Blkio background settings
+   write /dev/blkio/background/blkio.weight 10
+
 # Balance
 on property:persist.spectrum.profile=0
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedhorizon"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedhorizon"
 
     write /dev/stune/top-app/schedtune.boost 0
     
@@ -54,17 +57,17 @@ on property:persist.spectrum.profile=0
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
     chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
     
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/efficient_freq "844800 1036800 1190400"
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_delay "30 30 40"
-    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/efficient_freq "1248000 1478400 1708800"
-    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_delay "30 30 40"
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedhorizon/efficient_freq "844800 1036800 1190400"
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedhorizon/up_delay "30 30 40"
+    write /sys/devices/system/cpu/cpu2/cpufreq/schedhorizon/efficient_freq "1248000 1478400 1708800"
+    write /sys/devices/system/cpu/cpu2/cpufreq/schedhorizon/up_delay "30 30 40"
 
     write /sys/module/boost_control/parameters/input_boost_freq_perf 556800
     write /sys/module/boost_control/parameters/input_boost_freq_lp 844800
     write /sys/module/boost_control/parameters/lmk_boost_ms 100
 
     write /sys/class/kgsl/kgsl-3d0/max_gpuclk 510000000
-    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 133000000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 214000000
     
     write /dev/cpuset/top-app/cpus 0-3
     write /dev/cpuset/foreground/cpus 0-1,3
@@ -74,8 +77,8 @@ on property:persist.spectrum.profile=0
 
 # Performance
 on property:persist.spectrum.profile=1
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedhorizon"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedhorizon"
 
     write /dev/stune/top-app/schedtune.boost 1
     
@@ -103,17 +106,17 @@ on property:persist.spectrum.profile=1
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
     chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
     
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/efficient_freq "0"
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_delay "0"
-    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/efficient_freq "0"
-    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_delay "0"
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedhorizon/efficient_freq "0"
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedhorizon/up_delay "0"
+    write /sys/devices/system/cpu/cpu2/cpufreq/schedhorizon/efficient_freq "0"
+    write /sys/devices/system/cpu/cpu2/cpufreq/schedhorizon/up_delay "0"
 
     write /sys/module/boost_control/parameters/input_boost_freq_perf 1036800
     write /sys/module/boost_control/parameters/input_boost_freq_lp 1036800
     write /sys/module/boost_control/parameters/lmk_boost_ms 500
 
     write /sys/class/kgsl/kgsl-3d0/max_gpuclk 624000000
-    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 133000000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 214000000
     
     write /dev/cpuset/top-app/cpus 0-3
     write /dev/cpuset/foreground/cpus 0-3
@@ -123,8 +126,8 @@ on property:persist.spectrum.profile=1
 
 # Battery
 on property:persist.spectrum.profile=2
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedhorizon"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedhorizon"
 
     write /dev/stune/top-app/schedtune.boost 0
     
@@ -152,17 +155,17 @@ on property:persist.spectrum.profile=2
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
     chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
     
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/efficient_freq "0"
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_delay "0"
-    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/efficient_freq "0"
-    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_delay "0"
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedhorizon/efficient_freq "0"
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedhorizon/up_delay "0"
+    write /sys/devices/system/cpu/cpu2/cpufreq/schedhorizon/efficient_freq "0"
+    write /sys/devices/system/cpu/cpu2/cpufreq/schedhorizon/up_delay "0"
 
     write /sys/module/boost_control/parameters/input_boost_freq_perf 0
     write /sys/module/boost_control/parameters/input_boost_freq_lp 0
     write /sys/module/boost_control/parameters/lmk_boost_ms 0
 
     write /sys/class/kgsl/kgsl-3d0/max_gpuclk 401800000
-    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 133000000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 214000000
     
     write /dev/cpuset/top-app/cpus 0-3
     write /dev/cpuset/foreground/cpus 0-1,3
@@ -173,8 +176,8 @@ on property:persist.spectrum.profile=2
 
 # Gaming
 on property:persist.spectrum.profile=3
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedhorizon"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedhorizon"
 
     write /dev/stune/top-app/schedtune.boost 0
     
@@ -202,10 +205,10 @@ on property:persist.spectrum.profile=3
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
     chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
     
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/efficient_freq "0"
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_delay "0"
-    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/efficient_freq "0"
-    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_delay "0"
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedhorizon/efficient_freq "0"
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedhorizon/up_delay "0"
+    write /sys/devices/system/cpu/cpu2/cpufreq/schedhorizon/efficient_freq "0"
+    write /sys/devices/system/cpu/cpu2/cpufreq/schedhorizon/up_delay "0"
 
     write /sys/module/boost_control/parameters/input_boost_freq_perf 806400
     write /sys/module/boost_control/parameters/input_boost_freq_lp 844800
